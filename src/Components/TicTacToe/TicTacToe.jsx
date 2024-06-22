@@ -53,6 +53,12 @@ export const TicTacToe = () => {
         return null
     }
 
+    const resetGame = () => {
+        setBoard(Array(9).fill(null))
+        setTurn(TURNS.X)
+        setWinner(null)
+    }
+
     const updateBoard = (index) => {
 
         if (board[index] || winner) return
@@ -84,14 +90,14 @@ export const TicTacToe = () => {
     <h1 className='title'>TicTacToe</h1>
     <section className="game">
         {
-        board.map((e, index) => {
+        board.map((square, index) => {
         return (
         <Square 
         key={index}
         index={index}
         updateBoard={updateBoard}
         >
-            {e}
+            {square}
         </Square>
         )
         })
@@ -101,6 +107,31 @@ export const TicTacToe = () => {
     <Square isSelected={turn === TURNS.X}>{TURNS.X}</Square>
     <Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
     </section>
+    {
+        winner !== null && (
+            <section className="winner">
+                <div className="text">
+                    <h2>
+                        {
+                           winner === false 
+                           ? 'Empatados'
+                           : 'Ganó' + ' ' + winner 
+                        }
+                    </h2>
+
+                    <header className='win'>
+                        {
+                            winner &&
+                            <Square>{winner}</Square>
+                        }                        
+                    </header>
+                    <footer>
+                        <button onClick={resetGame}>Empezar de nuevo</button>
+                    </footer>
+                </div>
+            </section>
+        )
+    }
     </div>
     )
 }
