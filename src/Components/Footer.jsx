@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <footer style="text-align:center;">
+    <footer className='footer'>
         Hecho con ❤️ para Santi 
     </footer>
   )
