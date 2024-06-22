@@ -55,7 +55,7 @@ export const TicTacToe = () => {
         setTurn(newTurn)
 
         window.localStorage.setItem('board', JSON.stringify(newBoard))
-        window.localStorage.setItem('turn', turn)
+        window.localStorage.setItem('turn', newTurn)
 
         const newWinner = checkWinner(newBoard)
         if (newWinner) {
