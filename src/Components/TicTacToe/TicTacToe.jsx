@@ -88,6 +88,7 @@ export const TicTacToe = () => {
     return (
     <div className='board'>
     <h1 className='title'>TicTacToe</h1>
+    <button onClick={resetGame}>Reset</button>
     <section className="game">
         {
         board.map((square, index) => {
