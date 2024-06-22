@@ -95,7 +95,7 @@
   
   .board button {
     padding: 8px 12px;
-    margin: 25px;
+    margin: 25px auto;
     background: transparent;
     border: 2px solid #eee;
     color: #eee;
